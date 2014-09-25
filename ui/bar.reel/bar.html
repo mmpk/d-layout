@@ -8,20 +8,33 @@
         "owner": {
             "properties": {
                 "element": {"#": "bar"}
-            },
-            "listeners": [
-                {
-                    "type": "mousemove",
-                    "useCapture": false,
-                    "listener": {"@": "actionEventListener"}
-                }
-            ]
+            }
         },
-        "actionEventListener": {
-            "prototype": "montage/core/event/action-event-listener",
+        "button": {
+            "prototype": "digit/ui/button.reel",
             "properties": {
-                "action": "Movier",
-                "handler": {"@": "owner"}
+                "element": {"#": "button"},
+                "enabled": true,
+                "label": "PROMISE"
+            }
+        },
+        "promiseController": {
+            "prototype": "montage/core/promise-controller",
+            "properties": {
+                "fulfilled": true,
+                "pending": true,
+                "promise": "WHEN",
+                "rejected": true
+            }
+        },
+        "textField": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField"},
+                "placeholderValue": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@promiseController.value"}
             }
         }
     }
@@ -30,6 +43,8 @@
 <body>
     <div data-montage-id="bar" class="Bar">
         <div data-param="*"></div>
+        <button data-montage-id="button"></button>
+        <input data-montage-id="textField" type="text">
     </div>
 </body>
 </html>
