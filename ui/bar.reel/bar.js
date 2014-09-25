@@ -17,8 +17,14 @@ exports.Bar = Component.specialize(/** @lends Bar# */ {
     
     Movier: {
         value: function(event) {
-            console.log("EVENT:")
-            console.log(event)
+
+        }
+    },
+
+    handleActionEventListenerMouseup: {
+        value: function (event) {
+                        console.log("EVENT:")
+                        console.log(event)
         }
     }
 
