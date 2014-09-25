@@ -4,18 +4,32 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="bar.css">
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "bar"}
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "bar"}
+            },
+            "listeners": [
+                {
+                    "type": "mousemove",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
                 }
+            ]
+        },
+        "actionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "Movier",
+                "handler": {"@": "owner"}
             }
         }
+    }
     </script>
 </head>
 <body>
-	<div data-montage-id="bar" class="Bar">
+    <div data-montage-id="bar" class="Bar">
         <div data-param="*"></div>
-	</div>
+    </div>
 </body>
 </html>
