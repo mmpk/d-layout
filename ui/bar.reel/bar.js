@@ -13,5 +13,18 @@ exports.Bar = Component.specialize(/** @lends Bar# */ {
         value: function Bar() {
             this.super();
         }
+    },
+    
+    prepareForActivationEvents: {
+        value: function() {
+            this.element.addEventListener('mouseup', this);
+        }
+    },
+
+    handleMouseup: {
+        value: function(event) {
+            this._hasFocus = true;
+        }
     }
+
 });
