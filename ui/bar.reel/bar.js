@@ -23,7 +23,7 @@ exports.Bar = Component.specialize(/** @lends Bar# */ {
 
     handleMouseup: {
         value: function(event) {
-            this._hasFocus = true;
+            console.log("CPPPPPPPPPPPPPPP")
         }
     }
 
