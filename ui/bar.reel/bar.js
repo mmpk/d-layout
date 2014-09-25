@@ -13,19 +13,6 @@ exports.Bar = Component.specialize(/** @lends Bar# */ {
         value: function Bar() {
             this.super();
         }
-    },
-    
-    Movier: {
-        value: function(event) {
-
-        }
-    },
-
-    handleActionEventListenerMouseup: {
-        value: function (event) {
-                        console.log("EVENT:")
-                        console.log(event)
-        }
     }
 
 });
