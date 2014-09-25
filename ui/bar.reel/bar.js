@@ -17,13 +17,15 @@ exports.Bar = Component.specialize(/** @lends Bar# */ {
     
     prepareForActivationEvents: {
         value: function() {
-            this.element.addEventListener('mouseup', this);
+             this.element.addEventListener('mouseup', this);
+             this.element.addEventListener('onkeydown', this);
+             this.element.addEventListener('onmouseover', this);
         }
     },
 
-    handleMouseup: {
+    handleOnkeydown: {
         value: function(event) {
-            console.log("CPPPPPPPPPPPPPPP")
+            console.log(event)
         }
     }
 
